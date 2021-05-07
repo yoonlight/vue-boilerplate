@@ -22,6 +22,9 @@
               v-model="password"
               label="Password"
               required
+              :type="show1 ? 'text' : 'password'"
+              :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+              @click:append="show1 = !show1"
             ></v-text-field>
 
             <v-btn
@@ -54,6 +57,7 @@ export default {
       (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
     ],
     password: "",
+    show1: "",
   }),
 
   methods: {
